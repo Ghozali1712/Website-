@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Panduan Menggunakan Script Termux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Light background for the page */
+        }
+        h1, h2 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #2d2d2d; /* Dark background for command line */
+            color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #f8f8f8;
+        }
+        .highlight {
+            color: #FF6600; /* Orange color for highlighted text */
+            font-weight: bold;
+        }
+        .step {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .note {
+            background-color: #444335;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .background-dark {
+            background-color: #d25454; /* Dark background for the whole page */
+            color: white;
+        }
+    </style>
+</head>
+<body class="background-dark">
+
+    <h1>Panduan Menggunakan Script di Termux JNCUK</h1>
+
+    <h2>Langkah 1: Download dan Ekstrak Script Termux</h2>
+    <ul>
+        <li><strong>Download Script ZIP:</strong> Download file script Termux dalam bentuk ZIP di WEBSITE JNCUK.</li>
+        <li><strong>Ekstrak ZIP ke Penyimpanan Internal HP:</strong> Ekstrak file ZIP ke folder yang mudah diakses di penyimpanan internal HP Anda, misalnya:
+            <pre>/sdcard/download/script</pre>
+        </li>
+    </ul>
+
+    <h2>Langkah 2: Persiapan di Termux</h2>
+    <ul>
+        <li><strong>Buka Aplikasi Termux:</strong> Jika belum terinstal, unduh dan install aplikasi <strong>Termux</strong> dari <strong>Google Play Store</strong> atau <strong>F-Droid</strong>.</li>
+        <li><strong>Masuk ke Folder Script:</strong> Buka Termux dan arahkan ke folder tempat Anda mengekstrak file ZIP dengan mengetikkan perintah berikut:
+            <pre>cd /sdcard/download/script</pre>
+        </li>
+        <li><strong>Verifikasi Isi Folder:</strong> Ketik perintah <code>ls</code> untuk memastikan semua file yang diperlukan ada di dalam folder:
+            <pre>ls</pre>
+        </li>
+    </ul>
+
+    <h2>Langkah 3: Install Library yang Dibutuhkan</h2>
+    <ul>
+        <li><strong>Update Paket di Termux:</strong> Perbarui paket-paket di Termux dengan perintah berikut:
+            <pre>pkg update && pkg upgrade</pre>
+        </li>
+        <li><strong>Install Node.js:</strong> Install <strong>Node.js</strong> yang diperlukan untuk menjalankan skrip dengan perintah:
+            <pre>pkg install nodejs</pre>
+        </li>
+        <li><strong>Install Axios:</strong> Install <strong>Axios</strong> dan library lainnya yang dibutuhkan dengan perintah:
+            <pre>npm install axios</pre>
+        </li>
+    </ul>
+
+    <h2>Langkah 4: Simpan Kukis (Login ke KlikIndomaret)</h2>
+    <ul>
+        <li><strong>Login ke KlikIndomaret dengan Skrip <code>masuk.js</code>:</strong> Setelah semua library terpasang, jalankan skrip <code>masuk.js</code> untuk login ke KlikIndomaret dan menyimpan <strong>token</strong> atau <strong>kukis</strong>:
+            <pre>node masuk.js</pre>
+        </li>
+        <li><strong>Masukkan Nomor HP dan Password:</strong> Ikuti petunjuk untuk memasukkan nomor HP dan password Anda saat diminta.</li>
+        <li><strong>Simpan Token/Kukis:</strong> Jika login berhasil, token atau kukis akan disimpan di file <code>kuki.txt</code>.</li>
+    </ul>
+
+    <h2>Langkah 5: Cek Stok Produk</h2>
+    <ul>
+        <li><strong>Jalankan Skrip untuk Cek Stok:</strong> Setelah login berhasil dan kukis disimpan, Anda bisa mengecek stok produk dengan menjalankan skrip <code>main.js</code>:
+            <pre>node main.js</pre>
+        </li>
+        <li><strong>Masukkan Kode Toko dan PLU:</strong> Ikuti petunjuk untuk memasukkan <strong>Kode Toko</strong> dan <strong>PLU</strong> produk yang ingin Anda cek.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Catatan:</strong>
+        <ul>
+            <li>Pastikan Anda telah mengikuti setiap langkah dengan benar, terutama saat login dan menyimpan kukis, karena kukis tersebut digunakan untuk memverifikasi akses Anda ke KlikIndomaret.</li>
+            <li>Jika ada masalah saat menjalankan skrip atau login, pastikan Anda sudah memperbarui paket-paket di Termux dan menginstall semua dependensi yang dibutuhkan.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
